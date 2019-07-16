@@ -9,7 +9,6 @@
       <el-button type="danger" icon="el-icon-delete" circle></el-button>
     </el-row>
     <h1>{{ msg }}</h1>
-
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
