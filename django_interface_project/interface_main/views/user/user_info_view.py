@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2019/8/24 17:02
+# @Author  : alvin
+# @File    : user_info_view.py
+# @Software: PyCharm
+
 from django.views.generic import View
 from interface_main.utils.http_format import response_success
 from interface_main.exception.my_exception import MyException

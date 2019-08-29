@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2019/8/25 17:04
+# @Author  : alvin
+# @File    : users_view.py
+# @Software: PyCharm
+
 import json
 from django.views.generic import View
 from django.contrib.auth.models import User

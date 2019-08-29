@@ -23,4 +23,5 @@ from interface_main.views.user.user_info_view import UserInfoView
 urlpatterns = [
     path('api/backend/users/', UsersView.as_view()),
     path('api/backend/user/info/', UserInfoView.as_view()),
+    # path('/')
 ]
