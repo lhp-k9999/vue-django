@@ -5,10 +5,10 @@
 # @Software: PyCharm
 
 class ErrorCode:
-    SYSTEM = 50000
-    DB = 10000
-    COMMON = 40000
+    DB      = 10000
     UNKNOWN = 30000
+    COMMON  = 40000
+    SYSTEM  = 50000
 
 
 class MyException(Exception):
