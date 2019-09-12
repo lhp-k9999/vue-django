@@ -27,9 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -110,7 +108,7 @@ WSGI_APPLICATION = 'django_interface_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite2'),
     }
 }
 
@@ -182,16 +180,16 @@ LOGGING = {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(BASE_DIR, r'log\all.log'),     #日志输出文件
-            'maxBytes': 1024*1024*5,                  #文件大小
-            'backupCount': 5,                         #备份份数
+            'maxBytes': 1024*1024*10,                  #文件大小
+            'backupCount': 10,                         #备份份数
             'formatter':'standard',                   #使用哪种formatters日志格式
         },
         'error': {
             'level':'ERROR',
             'class':'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(BASE_DIR, r'log\error.log'),
-            'maxBytes':1024*1024*5,
-            'backupCount': 5,
+            'maxBytes':1024*1024*10,
+            'backupCount': 10,
             'formatter':'standard',
         },
         'console':{
@@ -203,8 +201,8 @@ LOGGING = {
             'level':'INFO',
             'class':'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(BASE_DIR, r'log\info.log'),
-            'maxBytes': 1024*1024*5,
-            'backupCount': 5,
+            'maxBytes': 1024*1024*10,
+            'backupCount': 10,
             'formatter': 'standard',
         },
     },

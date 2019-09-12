@@ -1,5 +1,8 @@
 import axios from 'axios'
 // 定义后端服务ip和端口
+
+axios.defaults.withCredentials = true;
+
 const host = "http://127.0.0.1:8000/";
 
 // 封装各种请求方法 GET，POST，PUT，DELETE就对应着对这个资源的 查，改，增，删 4个操作
@@ -14,27 +17,22 @@ export const getRequest = function (path, data={}) {
 };
 
 export const postRequest = function (path, data={}) {
-    data["withCredentials"] = true;
     return axios.post(host + path, data)
 };
 
 export const deleteRequest = function (path, data={}) {
-    data["withCredentials"] = true;
     return axios.delete(host + path, data)
 };
 
 export const putRequest = function (path, data={}) {
-    data["withCredentials"] = true;
     return axios.put(host + path, data)
 };
 
 export const patchRequest = function (path, data={}) {
-    data["withCredentials"] = true;
     return axios.patch(host + path, data)
 };
 
 // GET方法的行为很类似，但服务器在响应中只返回实体的主体部分
 export const headRequest = function (path,data={}) {
-    data['withCredentials'] = true;
     return axios.head(host+path,data)
 }
