@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2019/9/20 13:03
+# @Author  : alvin
+# @File    : json_field.py
+# @Software: PyCharm
+
 from django.db import models
 
 # Create your models here.
