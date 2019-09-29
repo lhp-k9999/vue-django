@@ -1,6 +1,5 @@
 import axios from 'axios'
 // 定义后端服务ip和端口
-
 axios.defaults.withCredentials = true;
 
 const host = "http://127.0.0.1:8000/";

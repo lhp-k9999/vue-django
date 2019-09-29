@@ -1,7 +1,6 @@
 <template>
     <div class="login">
-        <!--复用header，其中header组件的create做用户是否登录判断-->
-        <header-component></header-component>
+        <header-component :isShowLogout="false" :isShowMenu="false"></header-component>
         <div class="login-context">
             <h2>账号登录</h2>
 
@@ -41,7 +40,6 @@
         props: {},
         data() {
             return {
-                // 默认不展示提示信息
                 showMessage: false,
                 errorMessage: "错误",
 
@@ -49,7 +47,6 @@
                     username: "",
                     password: "",
                 },
-                 // el-form上绑定rules，rlues为校验规则
                 rules: {
                     username: [
                         {required: true, message: '请输入用户名称', trigger: 'blur'},
@@ -79,12 +76,10 @@
                 });
             },
             login() {
-                // 这里的 loginFormRef 绑定el-form的 ref
                 this.$refs.loginFormRef.validate((valid) => {
                     if (valid) { // 代表校验通过
                         loginRequest(this.loginForm).then(data => {
                             if (true === data.data.success) {
-                                // 登录和注册抽取公用方法
                                 this.redirectToIndex()
                             } else {
                                 this.showMessage = true;
