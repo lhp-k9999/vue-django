@@ -2,7 +2,8 @@
     <div class="interface-main">
         <div class="service-tree-main">
             <el-button type="primary" plain size="small" @click="openAddServiceModal(0)">创建根节点</el-button>
-            <el-tree class="margin-top-5" :data="data" :props="defaultProps" :default-expand-all="true" @node-click="handleNodeClick">
+            <el-tree class="margin-top-5" :data="data" :props="defaultProps" :default-expand-all="true"
+                     @node-click="handleNodeClick">
                 <div class="custom-tree-node" slot-scope="{ node, data }">
                     <span>{{ node.label }}</span>
                     <el-dropdown @command="handleCommand">
@@ -10,7 +11,6 @@
                             <i class="el-icon-arrow-down el-icon--right"></i>
                           </span>
                         <el-dropdown-menu slot="dropdown">
-                            <!--点击之后的返回事件-->
                             <el-dropdown-item :command="{key: 'add', data: node}">Add</el-dropdown-item>
                             <el-dropdown-item :command="{key: 'edit', data: node}">Edit</el-dropdown-item>
                             <el-dropdown-item :command="{key: 'delete', data: node}">Delete</el-dropdown-item>
@@ -52,7 +52,8 @@
             </el-dialog>
         </div>
         <div class="interface-list-main">
-            34
+            // 组件增加步骤3：template导入组件
+            <interface-list :serviceId="currentServiceId"></interface-list>
         </div>
     </div>
 </template>
@@ -65,8 +66,15 @@
         deleteSingleServiceRequest
     } from "../../requests/service"
 
+    // 组件增加步骤1： 进行import
+    import interfaceList from "./list"
+
     export default {
         name: "index",
+        components: {
+            // 组件增加步骤2： components进行注册,"-"表示组件
+            'interface-list': interfaceList
+        },
         data() {
             return {
                 data: [],
@@ -96,6 +104,8 @@
                         {required: true, message: '请输入描述', trigger: 'blur'},
                     ],
                 },
+
+                currentServiceId: undefined,
             }
         },
         methods: {
@@ -167,7 +177,6 @@
             handleCommand(command) {
                 let data = command.data.data;
                 let key = command.key;
-                // 根据传入的key来确定操作
                 switch (key) {
                     case "add":
                         this.openAddServiceModal(data.id);
@@ -181,8 +190,7 @@
                 }
             },
             handleNodeClick(data) {
-                // console.log(data);
-                window.console.log(data);
+                this.currentServiceId = data.id;
             },
             getServicesTreeFun() {
                 getServicesTreeRequest().then(data => {
