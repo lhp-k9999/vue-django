@@ -52,7 +52,6 @@
             </el-dialog>
         </div>
         <div class="interface-list-main">
-            // 组件增加步骤3：template导入组件
             <interface-list :serviceId="currentServiceId"></interface-list>
         </div>
     </div>
@@ -66,13 +65,11 @@
         deleteSingleServiceRequest
     } from "../../requests/service"
 
-    // 组件增加步骤1： 进行import
     import interfaceList from "./list"
 
     export default {
         name: "index",
         components: {
-            // 组件增加步骤2： components进行注册,"-"表示组件
             'interface-list': interfaceList
         },
         data() {
