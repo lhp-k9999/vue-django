@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2019/9/2 9:48
-# @Author  : alvin
-# @File    : service_list_view.py
-# @Software: PyCharm
-
 import json
 
 from django.forms import model_to_dict

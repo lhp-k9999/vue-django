@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019/8/25 17:04
+# @Time    : 2019/8/24 17:02
 # @Author  : alvin
-# @File    : users_view.py
+# @File    : user_info_view.py
 # @Software: PyCharm
 
 import json
@@ -32,6 +32,7 @@ class UsersView(View):
             raise MyException()
 
         user = authenticate(username=form.cleaned_data["username"], password=form.cleaned_data["password"])
+        print("UsersView-get",user)
         if user:
             login(request, user)  # 登录持久化， 生成session
             return response_success("登录成功")

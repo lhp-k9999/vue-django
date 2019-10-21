@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2019/9/24 18:03
-# @Author  : alvin
-# @File    : json_field.py
-# @Software: PyCharm
 import json
 from django import forms
 

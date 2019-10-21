@@ -3,6 +3,7 @@
 # @Author  : alvin
 # @File    : service_list_view.py
 # @Software: PyCharm
+
 import json
 
 from django.forms import model_to_dict

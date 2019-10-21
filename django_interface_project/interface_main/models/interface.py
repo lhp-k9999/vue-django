@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2019/9/21 18:03
-# @Author  : alvin
-# @File    : json_field.py
-# @Software: PyCharm
-
-
 from django.db import models
 from interface_main.models.service import Service
 from interface_main.models.fields.json_field import JsonField

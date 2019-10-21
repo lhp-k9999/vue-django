@@ -3,9 +3,8 @@
 # @Author  : alvin
 # @File    : user.py
 # @Software: PyCharm
-
-
 from django import forms
+
 
 class UserForm(forms.Form):
     username = forms.CharField(max_length=50,
